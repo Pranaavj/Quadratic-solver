@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Test {
+
+    public static void main(String[] args) {
+
+        int a = 0, b = 0, c = 0, num;
+
+        Scanner sc = new Scanner(System.in);
+
+        QuadraticSolver qs;
+        while (true) {
+
+            System.out.print("\nEnter Number a:");
+            a = sc.nextInt();
+
+
+            System.out.print("Enter Number b:");
+            b = sc.nextInt();
+
+
+            System.out.print("Enter Number c:");
+            c = sc.nextInt();
+            try {
+                qs = new QuadraticSolver(a, b, c);
+                System.out.println("Root#1 :" + qs.findRoot1());
+                System.out.println("Root#2 :" + qs.findRoot2());
+                break;
+            } catch (QuadraticException e) {
+                continue;
+            } catch (NonRealException e) {
+                continue;
+            }
+        }
+
+
+    }
+
+}
